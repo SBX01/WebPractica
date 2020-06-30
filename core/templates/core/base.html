@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Stylist</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="/manifest.json">
+   
+    {% load pwa %}
+    {% progressive_web_app_meta %}
+
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static  'core/img/logo.ico' %}" type="ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{% static 'core/tablesorter/jquery.tablesorter.js' %}"></script>
+
+    {% block css%}
+
+    {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'core/bootstrap-4.4.1-dist/css/bootstrap.min.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+ 
+    <script src="{% static 'core/bootstrap-4.4.1-dist/js/bootstrap.min.js' %}"></script>
+   
+
+
+    <!-- Otos estilos-->
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/iconBar.css' %}">
+    
+   
+
+</head>
+
+<body>
+    <br><br>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark navbar-inverse">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static  'core/img/logo.png' %}" alt="logo" style="width:40px;">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Stylist</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#historia">Nosotros</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#precios">Precios</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav  navbar-nav right">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">{{ user.username }}</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'auth_logout' %}">Cerrar sesion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'auth_login' %}">Iniciar sesion</a>
+                    </li>
+                    <li class="nav-item active ">
+                        <a class="nav-link" href="{% url 'registration_register' %}">Registrar</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="icon-bar">
+            <a href="https://www.facebook.com/paolatoledostylist/" target="_blank" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/paolatoledostylist/" target="_blank" class="fa fa-instagram"></a>
+        </div>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+
+</html>
