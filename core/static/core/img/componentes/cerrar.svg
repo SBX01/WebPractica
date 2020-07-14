@@ -1,0 +1,42 @@
+<svg id="cerrar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="230" height="56" viewBox="0 0 230 56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+      }
+
+      .cls-2 {
+        fill: #0a0a0a;
+        font-size: 15px;
+        font-family: SegoeUI, Segoe UI;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        filter: url(#CERRAR_SESION);
+      }
+    </style>
+    <filter id="CERRAR_SESION" x="53.5" y="12.163" width="123" height="35" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.478"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Rectángulo_1" data-name="Rectángulo 1" class="cls-1">
+    <rect class="cls-3" width="230" height="56" rx="28"/>
+    <rect class="cls-4" x="0.5" y="0.5" width="229" height="55" rx="27.5"/>
+  </g>
+  <g class="cls-5" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <text id="CERRAR_SESION-2" data-name="CERRAR SESION" class="cls-2" transform="translate(61 33.66)"><tspan x="0" y="0">CERRAR SESION</tspan></text>
+  </g>
+</svg>

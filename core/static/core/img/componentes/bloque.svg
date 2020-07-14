@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="926" height="138" viewBox="0 0 926 138">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a8a4a4;
+      }
+
+      .cls-2, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 20px;
+        font-family: Tahoma;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke-linecap: round;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 2px;
+      }
+
+      .cls-5 {
+        stroke-width: 1.996px;
+      }
+
+      .cls-6 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1" data-name="Grupo 1" transform="translate(-332 -2380)">
+    <rect id="Rectángulo_21" data-name="Rectángulo 21" class="cls-1" width="926" height="138" rx="23" transform="translate(332 2380)"/>
+    <text id="Los_esperamos_en_Pasaje_Ocho_828_San_Marcos_2000_Talcahuano." data-name="Los esperamos en Pasaje Ocho 828, San Marcos 2000, Talcahuano." class="cls-2" transform="translate(502 2419)"><tspan x="0" y="0">Los esperamos en Pasaje Ocho 828, San Marcos 2000, Talcahuano.</tspan></text>
+    <g id="mail" transform="translate(367 2447)">
+      <rect id="Rectángulo_22" data-name="Rectángulo 22" class="cls-3" width="75" height="46" transform="translate(1 8)"/>
+      <line id="Línea_3" data-name="Línea 3" class="cls-4" x2="21.158" y2="16.728" transform="translate(54.186 32.058)"/>
+      <line id="Línea_4" data-name="Línea 4" class="cls-4" y1="17.456" x2="22.075" transform="translate(1.15 31.329)"/>
+      <path id="Trazado_7" data-name="Trazado 7" class="cls-5" d="M1.11,12.053S29.682,33.9,32.01,35.675a9.879,9.879,0,0,0,12.395,0C46.732,33.9,75.3,12.054,75.3,12.054" transform="translate(0.04 1.468)"/>
+    </g>
+    <g id="Page-1" transform="translate(987.851 2451)">
+      <g id="Core">
+        <g id="settings-phone">
+          <path id="Shape" class="cls-6" d="M28.972,17.383H23.177v5.794h5.794V17.383Zm11.589,0H34.766v5.794H40.56V17.383Zm8.691,18.832a32.811,32.811,0,0,1-10.43-1.738,3.568,3.568,0,0,0-2.9.579l-6.374,6.374A45.1,45.1,0,0,1,10.43,22.308L16.8,15.934a2.307,2.307,0,0,0,.579-2.9A38.963,38.963,0,0,1,15.934,2.9a2.737,2.737,0,0,0-2.9-2.9H2.9A2.737,2.737,0,0,0,0,2.9,49.21,49.21,0,0,0,49.252,52.149a2.737,2.737,0,0,0,2.9-2.9V39.112a2.737,2.737,0,0,0-2.9-2.9Zm-2.9-18.832v5.794h5.794V17.383Z"/>
+        </g>
+      </g>
+    </g>
+    <text id="paolatoledostylist_gmail.com" data-name="paolatoledostylist@gmail.com" class="cls-2" transform="translate(459 2497)"><tspan x="0" y="0">paolatoledostylist@gmail.com</tspan></text>
+    <text id="_56_9_30931102" data-name="+56 9 30931102" class="cls-2" transform="translate(1061 2499)"><tspan x="0" y="0">+56 9 30931102</tspan></text>
+    <text id="Escríbenos_a" data-name="Escríbenos a" class="cls-2" transform="translate(459 2469)"><tspan x="0" y="0">Escríbenos a</tspan></text>
+    <text id="Llámanos_al" data-name="Llámanos al" class="cls-2" transform="translate(1061 2470)"><tspan x="0" y="0">Llámanos al</tspan></text>
+  </g>
+</svg>

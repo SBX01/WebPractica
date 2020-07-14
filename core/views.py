@@ -57,7 +57,7 @@ def Home(request):
     return render(request, 'core/home.html', data)
 
    
-@login_required
+#@login_required
 def Agendar(request): 
     
     tipoSs = TipoServicio.objects.all()
@@ -151,11 +151,3 @@ def Agendar(request):
    
     
     return render(request, 'core/agendar.html',datosRetorno)
-
-def RevisarAgendas(request):
-
-    datos={
-
-    }
-
-    return render(request, '',datos)

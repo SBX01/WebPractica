@@ -1,3 +1,4 @@
+
 var CACHE_NAME = 'site-cache';
 var urlsToCache = [
     '/',

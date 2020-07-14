@@ -30,69 +30,89 @@
 
 
     <!-- Otos estilos-->
-    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/iconBar.css' %}">
+    <link rel="stylesheet" href="{% static '/core/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static '/core/css/iconBar.css' %}">
     
    
 
 </head>
 
 <body>
-    <br><br>
-    <div class="container">
-        <nav class="navbar navbar-expand-sm navbar-dark navbar-inverse">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static  'core/img/logo.png' %}" alt="logo" style="width:40px;">
-            </a>
+    <div class="container-fluid" style="padding: 0; margin:0;">
+        <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #655B00;">
+          
+
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                 data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+                <ul class="navbar-nav mr-auto mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">Stylist</a>
+                        <a class="nav-link" href="{% url 'home' %}">Nosotros</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#historia">Nosotros</a>
+                        <a class="nav-link" href="#historia">Contacto</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#precios">Precios</a>
+                        <a class="nav-link" href="#precios">Servicios</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#precios">Blog</a>
+                    </li>
+
                 </ul>
-                <ul class="navbar-nav  navbar-nav right">
-                    {% if user.is_authenticated %}
+                <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+                    <img src="{% static  'core/img/logo.png' %}" alt="logo" style="width:50px;">
+                </a>
+                <ul class="navbar-nav  ml-auto mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">{{ user.username }}</a>
+                       
+                        <a href="https://api.whatsapp.com/send?phone=56956445216" target="_blank">
+                            <a href="https://api.whatsapp.com/send?phone=56930931102" target="_blank"> 
+                                <img src="{% static  'core/img/rrss/whatsapp.svg' %}" class="img-fluid"alt="logo" style="width:46px; padding-top:9%; "> 
+                            </a>
+                        </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'auth_logout' %}">Cerrar sesion</a>
+                         
+                        <a href="https://www.facebook.com/paolatoledostylist/" target="_blank">
+                            <img src="{% static  'core/img/rrss/facebook.svg' %}" class="img-fluid" alt="logo" style="width:50px;margin-left: 5px;">
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                       
+                        <a href="https://www.instagram.com/paolatoledoestilista/" target="-black">
+                            <img src="{% static  'core/img/rrss/instagram.svg' %}"class="img-fluid" alt="logo" style="width:53px; " > 
+                        </a>    
+                    </li>
+
+                    {% if user.is_authenticated %}
+
+                    <li class="nav-item active">
+                        <a class="nav-link botonRedondeado" href="{% url 'auth_logout' %}" >
+                            <img src="{% static  'core/img/componentes/cerrar.svg' %}" class="img-fluid" > 
+                        </a>
                     </li>
                     {% else %}
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'auth_login' %}">Iniciar sesion</a>
-                    </li>
-                    <li class="nav-item active ">
-                        <a class="nav-link" href="{% url 'registration_register' %}">Registrar</a>
+                        <a class="nav-link " href="{% url 'auth_login' %}">
+                            <img src="{% static  'core/img/componentes/Ingresar.svg' %}" > 
+                        </a>
                     </li>
                     {% endif %}
+                    
                 </ul>
             </div>
         </nav>
-    </div>
-    <div class="row">
-        <div class="icon-bar">
-            <a href="https://www.facebook.com/paolatoledostylist/" target="_blank" class="fa fa-facebook"></a>
-            <a href="https://www.instagram.com/paolatoledostylist/" target="_blank" class="fa fa-instagram"></a>
-        </div>
     </div>
 
     {% block content %}
 
     {% endblock %}
 
-
+    
 </body>
 
 </html>

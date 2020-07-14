@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="941" height="55" viewBox="0 0 941 55">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #6f6300;
+        stroke-linecap: round;
+        stroke-width: 15px;
+      }
+
+      .cls-2 {
+        fill: #6f6300;
+        font-size: 45px;
+        font-family: Tahoma;
+      }
+    </style>
+  </defs>
+  <g id="Direccion" transform="translate(7.5 1)">
+    <line id="Línea_1" data-name="Línea 1" class="cls-1" x2="195" transform="translate(0 27.5)"/>
+    <line id="Línea_2" data-name="Línea 2" class="cls-1" x2="195" transform="translate(731 27.5)"/>
+    <text id="DIRECCIÓN" class="cls-2" transform="translate(348.666 45)"><tspan x="0" y="0">DIRECCIÓN</tspan></text>
+  </g>
+</svg>

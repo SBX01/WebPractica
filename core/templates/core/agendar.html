@@ -11,82 +11,99 @@
 {% endblock %}
 
 {% block content%}
-<div class="jumbotron jumbotron-fluid" id="fagendar">
+<div class="container-fluid" id="fondo">
+    <div class="jumbotron jumbotron-fluid" id="fondo">
 
-    <div class="container-fluid">
-
-
-        <br>
+        <div class="container-fluid">
     
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    
-                    <!--Cambiar despues-->
-                    <div class="card text-left">
-                        <div class="card-body">
-                            <h4 class="card-title">Agendar servicio</h4>
     
-                            <div class="form-group">
-                                <label for="">Nombre</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" required="required" class="form-control" name="txtNombre"  >
-                                    <input type="text" required="required" class="form-control" name="txtApellido" >
+            <br>
+        
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        
+                        <!--Cambiar despues-->
+                        <div class="card text-left">
+                            <div class="card-body">
+                                <h4 class="card-title">Agendar servicio</h4>
+        
+                                <div class="form-group">
+                                    <label for="">Nombre</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" required="required" class="form-control" name="txtNombre"  >
+                                        <input type="text" required="required" class="form-control" name="txtApellido" >
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Telefono</label>
-                                <input type="text" required="required" class="form-control" name="txtTelefono" placeholder="123456789" maxlength="9">
+                                <div class="form-group">
+                                    <label for="">Telefono</label>
+                                    <input type="text" required="required" class="form-control" name="txtTelefono" placeholder="123456789" maxlength="9">
+        
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Correo</label>
+                                    <input type="email" required="required" class="form-control" name="txtEmail" value="{{user.email}}">
+        
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Fecha</label>
+                                    <input type="date" required="required" class="form-control" min="{{ fecha }}" name="txtFecha">
+        
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Lista de servicios</label>
+                                    <select class="form-control" id="cbService" onchange="" name="cbService" required>
+                                        <option value="">--------------------</option>
     
-                            </div>
-                            <div class="form-group">
-                                <label for="">Correo</label>
-                                <input type="email" required="required" class="form-control" name="txtEmail" value="{{user.email}}">
+                                        {% for t in tipo %}
     
-                            </div>
-                            <div class="form-group">
-                                <label for="">Fecha</label>
-                                <input type="date" required="required" class="form-control" min="{{ fecha }}" name="txtFecha">
+                                            <option value="{{t.id}}">{{t.tipo}}</option>
     
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Servicios</label>
+                                    <select class="form-control" id="cbTipoService" onchange="" name="cbTipoService" required>
+                                        <Option>--------------------</Option> 
+    
+                                     </select>
+                                     
+                                </div>
+                                <a href=""><button type="submit" class="btn btn-primary">Agendar</button></a>
+                                <a href="{% url 'home' %}" style="color: white">Volver<Button type="button"
+                                        class="btn btn-danger">Volver</Button> </a>
                             </div>
-                            <div class="form-group">
-                                <label for="">Lista de servicios</label>
-                                <select class="form-control" id="cbService" onchange="" name="cbService" required>
-                                    <option value="">--------------------</option>
-
-                                    {% for t in tipo %}
-
-                                        <option value="{{t.id}}">{{t.tipo}}</option>
-
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Servicios</label>
-                                <select class="form-control" id="cbTipoService" onchange="" name="cbTipoService" required>
-                                    <Option>--------------------</Option> 
-
-                                 </select>
-                                 
-                            </div>
-                            <a href=""><button type="submit" class="btn btn-primary">Agendar</button></a>
-                            <a href="{% url 'home' %}" style="color: white">Volver<Button type="button"
-                                    class="btn btn-danger">Volver</Button> </a>
                         </div>
-                    </div>
-                </form>
-                
+                    </form>
+                    
+                </div>
+                <div class="col-sm-3"></div>
             </div>
-            <div class="col-sm-3"></div>
+            <br>
+        
         </div>
-        <br>
     
     </div>
-
 </div>
 
+<style type="text/css" >
+    #fondo{
+        background-image: url("../static/core/img/fondos/punto.jpg");
+        min-height: 100%;
+        min-width: 1024px;
+          
+        /* Set up proportionate scaling */
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+
+    }
+
+</style>
 <script type="text/javascript">
     
  /* let serviciosyTipos = {};

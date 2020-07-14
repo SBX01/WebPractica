@@ -1,0 +1,42 @@
+<svg id="Ingresar-2" data-name="Ingresar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="135" height="56" viewBox="0 0 135 56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+      }
+
+      .cls-2 {
+        fill: #0a0a0a;
+        font-size: 15px;
+        font-family: SegoeUI, Segoe UI;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        filter: url(#Ingresar);
+      }
+    </style>
+    <filter id="Ingresar" x="33.156" y="12.163" width="69" height="35" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.478"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Rectángulo_1" data-name="Rectángulo 1" class="cls-1">
+    <rect class="cls-3" width="135" height="56" rx="28"/>
+    <rect class="cls-4" x="0.5" y="0.5" width="134" height="55" rx="27.5"/>
+  </g>
+  <g class="cls-5" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <text id="Ingresar-3" data-name="Ingresar" class="cls-2" transform="translate(40.66 33.66)"><tspan x="0" y="0">Ingresar</tspan></text>
+  </g>
+</svg>

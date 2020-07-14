@@ -1,0 +1,43 @@
+<svg id="Reserva" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="519" height="71.5" viewBox="0 0 519 71.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6f6300;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 45px;
+        font-family: Tahoma;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        filter: url(#PIDA_SU_RESERVA);
+      }
+    </style>
+    <filter id="PIDA_SU_RESERVA" x="68.5" y="2.5" width="383" height="69" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.478"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Rectángulo_1" data-name="Rectángulo 1" class="cls-1">
+    <rect class="cls-3" width="519" height="69" rx="34.5"/>
+    <rect class="cls-4" x="1" y="1" width="517" height="67" rx="33.5"/>
+  </g>
+  <g class="cls-5" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <text id="PIDA_SU_RESERVA-2" data-name="PIDA SU RESERVA" class="cls-2" transform="translate(76 53)"><tspan x="0" y="0">PIDA SU RESERVA</tspan></text>
+  </g>
+</svg>
