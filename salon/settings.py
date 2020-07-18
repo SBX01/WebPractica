@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'registration',
     'crispy_forms',
     'pwa',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'es-mx'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'America/Santiago'
 

@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
-from .models import Servicio, Reserva, TipoServicio
+from .models import Servicio, Reserva, TipoServicio , Calificacion , BlogPost
 from django.contrib.auth.decorators import login_required 
 from .forms import CustomUserForm, ContactForm
 from django.contrib.auth import login, authenticate
@@ -19,10 +19,12 @@ from datetime import datetime
 
 def Home(request):
     #para ver los precios en el home
+    valoracion = Calificacion.objects.all()
 
     serv = Servicio.objects.all()
-
-
+    #registro de comentario
+    if  request.POST:
+        pass
 
     #form contacto
     form = ContactForm(request.POST or None)
@@ -51,7 +53,8 @@ def Home(request):
 
     data = {
         'servicio':serv,
-        'form':form
+        'form':form,
+        'valoracion' : valoracion
     }
 
     return render(request, 'core/home.html', data)
@@ -151,3 +154,11 @@ def Agendar(request):
    
     
     return render(request, 'core/agendar.html',datosRetorno)
+
+def Blog(request):
+    vistaBlog = BlogPost.objects.all()
+    datos = {
+        'blogpost':vistaBlog
+    }
+    
+    return render(request, 'core/blog.html', datos)

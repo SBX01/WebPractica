@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/agendar.css' %}">
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'core/js/agenda.js' %}"></script>
+{% endblock %}
+
+{% block content%}
+
+<div class="row">
+    <div class="col-sm-1 "></div>
+    <div class="col-sm-10" style="background-color: white">
+        <img src="{% static  'core/img/componentes/blog.svg' %}" id="nosotros" width="100%" >
+        <br><br><br>
+        <div class="row"  style="background-color: white">
+            <div class="col-sm-5 ">
+               
+            </div>
+            <div class="col-sm-1 "></div>
+            <div class="col-sm-5 ">
+                
+                
+            </div>
+        </div>
+
+{% endblock %}

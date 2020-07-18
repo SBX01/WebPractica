@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="691" height="56" viewBox="0 0 691 56">
+  <defs>
+    <filter id="Comentar" x="283.5" y="6.5" width="124" height="48" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.478"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="comentar-2" data-name="comentar" transform="translate(-437 -2449)">
+    <g id="boton" transform="translate(437 2449)">
+      <g id="Rectángulo_1" data-name="Rectángulo 1" fill="#6f6300" stroke="#000" stroke-width="1">
+        <rect width="691" height="56" rx="28" stroke="none"/>
+        <rect x="0.5" y="0.5" width="690" height="55" rx="27.5" fill="none"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Comentar)">
+        <text id="Comentar-3" data-name="Comentar" transform="translate(291 39)" fill="#fff" font-size="25" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Comentar</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

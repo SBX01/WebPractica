@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="941" height="54" viewBox="0 0 941 54">
+  <g id="titulo" transform="translate(7.5)">
+    <line id="Línea_1" data-name="Línea 1" x2="195" transform="translate(0 27.5)" fill="none" stroke="#6f6300" stroke-linecap="round" stroke-width="15"/>
+    <line id="Línea_2" data-name="Línea 2" x2="195" transform="translate(731 27.5)" fill="none" stroke="#6f6300" stroke-linecap="round" stroke-width="15"/>
+    <text id="BLOG" transform="translate(407.5 45)" fill="#6f6300" font-size="45" font-family="Tahoma"><tspan x="0" y="0">BLOG</tspan></text>
+  </g>
+</svg>

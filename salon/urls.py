@@ -24,6 +24,6 @@ urlpatterns = [
     
 ]  
 
-admin.site.site_header = "Administracion Paola Toledo"
-admin.site.index_title = "Modulos de administracion"
+admin.site.site_header = "Administración Paola Toledo"
+admin.site.index_title = "Modulos de administración"
 admin.site.site_title = "Paola Toledo Salon de Belleza Integral"

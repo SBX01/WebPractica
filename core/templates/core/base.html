@@ -50,16 +50,16 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav mr-auto mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">Nosotros</a>
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#historia">Contacto</a>
+                        <a class="nav-link" href="#direccion">Contacto</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#precios">Servicios</a>
+                        <a class="nav-link" href="#trabajos">Servicios</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#precios">Blog</a>
+                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
                     </li>
 
                 </ul>
@@ -70,9 +70,7 @@
                     <li class="nav-item active">
                        
                         <a href="https://api.whatsapp.com/send?phone=56956445216" target="_blank">
-                            <a href="https://api.whatsapp.com/send?phone=56930931102" target="_blank"> 
                                 <img src="{% static  'core/img/rrss/whatsapp.svg' %}" class="img-fluid"alt="logo" style="width:46px; padding-top:9%; "> 
-                            </a>
                         </a>
                     </li>
                     <li class="nav-item active">
@@ -91,7 +89,7 @@
                     {% if user.is_authenticated %}
 
                     <li class="nav-item active">
-                        <a class="nav-link botonRedondeado" href="{% url 'auth_logout' %}" >
+                        <a class="nav-link" href="{% url 'auth_logout' %}" >
                             <img src="{% static  'core/img/componentes/cerrar.svg' %}" class="img-fluid" > 
                         </a>
                     </li>

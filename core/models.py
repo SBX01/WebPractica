@@ -29,3 +29,20 @@ class Reserva(models.Model):
     
     def __str__(self):
         return self.nombre
+
+class Calificacion(models.Model):
+    nombre = models.CharField(max_length=50)
+    comentario =  models.CharField(max_length=50)
+    nota =  models.IntegerField()
+
+    def __str__(self):
+        return self.nombre
+
+class BlogPost(models.Model):
+    titulo = models.CharField(max_length=50)
+    post =  models.CharField(max_length=900)
+    fechaPost =  models.DateField()
+    imagenPost =  models.ImageField()
+    
+    def __str__(self):
+        return self.titulo

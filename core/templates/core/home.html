@@ -5,45 +5,6 @@
 
 
 {% load static %}
-<script type="text/javascript">
-    
-    var table = $('#tablaPrecios');
-    
-    $('#ordenServicio, #ordenPrecio')
-        .wrapInner('<span title="sort this column"/>')
-        .each(function(){
-            
-            var th = $(this),
-                thIndex = th.index(),
-                inverse = false;
-            
-            th.click(function(){
-                
-                table.find('td').filter(function(){
-                    
-                    return $(this).index() === thIndex;
-                    
-                }).sortElements(function(a, b){
-                    
-                    return $.text([a]) > $.text([b]) ?
-                        inverse ? -1 : 1
-                        : inverse ? 1 : -1;
-                    
-                }, function(){
-                    
-                    // parentNode is the element we want to move
-                    return this.parentNode; 
-                    
-                });
-                
-                inverse = !inverse;
-                    
-            });
-                
-        });
-
-</script>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 
@@ -81,7 +42,7 @@
     <div class="row">
         <div class="col-sm-1 "></div>
         <div class="col-sm-10" style="background-color: white">
-            <img src="{% static  'core/img/componentes/nosotros.svg' %}" width="100%" >
+            <img src="{% static  'core/img/componentes/nosotros.svg' %}" id="nosotros" width="100%" >
             <br><br><br>
             <div class="row"  style="background-color: white">
                 <div class="col-sm-5 ">
@@ -106,24 +67,24 @@
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-5 ">
-                    <img src="../static/core/img/fondos/foto.png" class="img-fluid">
+                    <img src="../static/core/img/fondos/foto.png" class="img-fluid" height="100%">
                 </div>
             </div>
             <br>
             <br>
-            <img src="{% static  'core/img/componentes/Direccion.svg' %}" width="100%" >
+            <img src="{% static  'core/img/componentes/Direccion.svg' %}" id="direccion" width="100%" >
             <br><br>
             <div class="row"  style="background-color: white">
                 <br><br>
-                <div>
-                    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1130.2591855932167!2d-73.08240886470522!3d-36.750033663907146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96684aaeaee47d51%3A0x6fade6ac7040d37c!2zUGplLiA4IDgyOCwgVGFsY2FodWFubywgQsOtbyBCw61v!5e0!3m2!1ses-419!2scl!4v1587955788000!5m2!1ses-419!2scl"  frameborder="0" width="100%" height="300px" allowfullscreen="" aria-hidden="false" tabindex="0"><br>
+                <div class=" container-fluid">
+                    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1130.2591855932167!2d-73.08240886470522!3d-36.750033663907146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96684aaeaee47d51%3A0x6fade6ac7040d37c!2zUGplLiA4IDgyOCwgVGFsY2FodWFubywgQsOtbyBCw61v!5e0!3m2!1ses-419!2scl!4v1587955788000!5m2!1ses-419!2scl"  frameborder="0" width="auto" height="300px" allowfullscreen="" aria-hidden="false" tabindex="0"><br>
                         <br></iframe>
                 </div>
 
                 <br><br>
                 <img src="{% static  'core/img/componentes/bloque.svg' %}" width="100%" >
                 <br><br><br>
-                <img src="{% static  'core/img/componentes/trabajos.svg' %}" width="100%" >
+                <img src="{% static  'core/img/componentes/trabajos.svg' %}" id="trabajos" width="100%" >
                 <br><br><br>
                 <div class="row"  style="background-color: white">
                     <br><br>
@@ -159,28 +120,45 @@
             </div>
             <div class="row"  style="background-color: white">
                 <br><br><br>
-                <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </div>
-        </div>
-        <div class="col-sm-1"></div>
-    </div>
+                <div class="container">
+                    <form>
+                        <div class="form-group">
+                          <label for="">Nombre</label>
+                          <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingrese su nombre">
+                       
+                        </div>
+                        <div class="form-group">
+                          <label for="">Comentario</label>
+                          <input type="text" class="form-control" id="comentario" placeholder="Comentario">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Valoración</label>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label class="star" for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label class="star" for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label class="star" for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label class="star" for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label class="star" for="radio5">★</label>
+                            </p>
+                        </div>
 
-   
+                        <button type="submit" class="comment" style="width: 100%;"> 
+                            <img src="{% static  'core/img/componentes/valorar.svg' %}" class="img-fluid" width="100%" >
+                        </button>
+                    </form>
+                      <br><br><br>
+
+                </div>
+                <br><br>
+                
+            </div> 
+        </div>            
+   </div>
 </div>
 <button onclick="topFunction()" id="myBtn" title="Go to top">
     <svg class="bi bi-file-arrow-up" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -190,77 +168,12 @@
     </svg>
 </button>
 
-<br>
-<div class="division" id="precios"></div>
-<br>
-<div id="listaPrecios" class="container">
-    <h2>Listado de precios</h2>
-    <br>
-    <div class="row">
-        <div class="col-sm-5">
-            <a href="{% url 'agendar' %}" style="text-decoration:none">
-                <button id="btnAgendar" class="circleButton" >
-                    <h5 class="textoAgendar">Agenda aquí</h5>
-                 </button>
-            </a>
-           
-        </div>
-        <div class="col-sm-6">
-            <br>
-            <br>
-            <table class="tablesorter table table-striped" id="tablaPrecios">
-                <thead class="thead-dark">
-                    <tr>
-                        <th id="ordenServicio">Servicio</th>
-                        <th id="ordenPrecio">Precio</th>
-                    </tr>
-                </thead>
-                {% for s in servicio %}
-                <tbody >
-                    <tr>
-                        <td class="table-info">{{ s.nombre }}</td>
-                        <td class="table-info"><strong>$</strong>{{ s.precio }}</td>
-                    </tr>
-                </tbody>
-                {% endfor %}
-
-            </table>
-            <h6><strong>*Algunos precios pueden variar</strong></h6>  
-        </div>
-        
-    </div>  
-</div>
-<br>
-<div class="division" id="precios"></div>
-<br>
-<div class="row">
-    <div class="col-sm-4" >
-    </div>
-    <div class='col-sm-4 col-sm-offset-3' id="contacto">
-        <form method="POST" action="">
-            {% csrf_token %}
-            <h4 class="card-title">Contactenos</h4>
-            <table>
-                {{form.as_table}}
-            </table>
-            <a href=""><button type="submit" class="btn btn-primary">Enviar</button></a>
-        </form>
-    </div>
-
-</div>
-<br>
-
 <footer>
-
-
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-            <p class="fundadores" style="text-align: center;">Paola Toledo | Armando Martínez | Hernán Hernández</p>
-        </div>
-        <div class="col-sm-1"></div>
+    <div class="container-fluid" style="width: 100%; padding: 0%; margin:0%;">
+        <img src="{% static  'core/img/componentes/footer.svg' %}" class="img-fluid" width="100%" >
     </div>
 </footer>
+
 <script>
         //Get the button:
     mybutton = document.getElementById("myBtn");
@@ -290,17 +203,50 @@
     .fondo{
         background-image: url("../static/core/img/fondos/index.png");
         min-height: 100%;
-        min-width: auto;
+        min-width: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         /* Set up proportionate scaling */
-        width: 100%;
+        width: auto;
         height: auto;
         margin: 0;
         padding: 0;
 
     }
+
+    .star{ 
+        color:grey;
+        font-size: 50px;
+    }
+
+    input[type = "radio"]{ 
+        display:none;
+    }
+
+    .clasificacion{
+        direction: rtl;/* right to left */
+        unicode-bidi: bidi-override;/* bidi de bidireccional */
+    }
+
+    .star:hover{
+        color:orange;
+    }
+
+    .star:hover ~ label{
+        color:orange;
+    }
+
+    input[type = "radio"]:checked ~ .star{
+        color:orange;
+    }
+
+    button{
+        border-radius:0;
+        outline:none;
+        border: 0;
+    }
+
 </style>
       
 {% endblock %}
