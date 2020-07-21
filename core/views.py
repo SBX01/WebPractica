@@ -10,6 +10,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from datetime import date
 from datetime import datetime
+from django.views.generic import DetailView
 
 
 
@@ -20,40 +21,21 @@ from datetime import datetime
 def Home(request):
     #para ver los precios en el home
     valoracion = Calificacion.objects.all()
-
     serv = Servicio.objects.all()
     #registro de comentario
-    if  request.POST:
-        pass
-
-    #form contacto
-    form = ContactForm(request.POST or None)
-    if form.is_valid():
-        form_email = form.cleaned_data.get("email")
-        form_mensaje = form.cleaned_data.get("mensaje")
-        form_nombre = form.cleaned_data.get("nombre")
-        form_telefono = form.cleaned_data.get("telefono")
-        #esto envia correo ver settings para cambiar correo
-        asunto = "Consulta de %s" %(form_nombre)
-        email_from = settings.EMAIL_HOST_USER
-        email_to = [email_from]
-        email_mensaje = '''
-            Nombre: %s 
-            telefono de contacto: %s 
-            duda: %s 
-            Correo de contacto %s
-            ''' %(form_nombre, form_telefono, form_mensaje, form_email)
-        send_mail(asunto,
-            email_mensaje,
-            email_from,
-            email_to,
-            fail_silently=True)
+   
+    if request.POST:
+       
+        nota = Calificacion()
+        nota.nombre = request.POST.get("nombreUsuario")
+        nota.comentario = request.POST.get("comentario")
+        nota.nota = request.POST.get("estrellas")
+        nota.save();
 
 
 
     data = {
         'servicio':serv,
-        'form':form,
         'valoracion' : valoracion
     }
 
@@ -162,3 +144,12 @@ def Blog(request):
     }
     
     return render(request, 'core/blog.html', datos)
+
+class VerPost(DetailView):
+    template_name = 'core/post.html'
+    model = BlogPost
+    
+
+
+
+

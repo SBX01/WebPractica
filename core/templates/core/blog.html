@@ -14,17 +14,32 @@
 <div class="row">
     <div class="col-sm-1 "></div>
     <div class="col-sm-10" style="background-color: white">
-        <img src="{% static  'core/img/componentes/blog.svg' %}" id="nosotros" width="100%" >
+        <img src="{% static  'core/img/componentes/blog.svg' %}" id="blog" width="100%" >
         <br><br><br>
         <div class="row"  style="background-color: white">
-            <div class="col-sm-5 ">
-               
-            </div>
-            <div class="col-sm-1 "></div>
-            <div class="col-sm-5 ">
+           
+            <br><br>
+            <div class="col-sm-1 " ></div>
+            <div class="col-sm-10 " style="background-color: white">
+                <div class="container-fluid" style="height: 5rem;background-color: white;">
+                    {% for post in blogpost %}
+                    <br>
+                    <div class="jumbotron-fluid" style="background-image: url({{ post.imagenPost.url}}); background-position: center; background-repeat: no-repeat;  background-size: cover; ">
+                        <br><br>
+                        <a href="/blog/{{ post.slug }}" style="text-decoration: none;"> <h2> {{ post.titulo }} </h2> </a>
+                        <hr> 
+                        
+                        <br><br>
+                    </div> 
+                    <br>
+                    {% endfor %}                   
+                </div>
                 
-                
             </div>
+            <div class="col-sm-1 " ></div>
+
         </div>
+    </div>
+</div>
 
 {% endblock %}

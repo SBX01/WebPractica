@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 class TipoServicio(models.Model):
@@ -28,21 +30,36 @@ class Reserva(models.Model):
     tipo = models.ForeignKey(TipoServicio, on_delete=models.CASCADE, verbose_name="Tipo")
     
     def __str__(self):
+
         return self.nombre
 
 class Calificacion(models.Model):
     nombre = models.CharField(max_length=50)
     comentario =  models.CharField(max_length=50)
-    nota =  models.IntegerField()
+    nota =  models.IntegerField(
+        default=1,
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(1)
+        ]
+     )
 
     def __str__(self):
+
         return self.nombre
 
 class BlogPost(models.Model):
     titulo = models.CharField(max_length=50)
-    post =  models.CharField(max_length=900)
+    post =  models.TextField()
     fechaPost =  models.DateField()
-    imagenPost =  models.ImageField()
-    
+    imagenPost =  models.ImageField(upload_to ='blog/')
+    autor = models.CharField(max_length=60)
+    slug = models.SlugField(editable=False);
+
     def __str__(self):
         return self.titulo
+    
+    def save(self, *args,**kwargs):
+        if not self.id:
+            self.slug = slugify(self.titulo)
+        super(BlogPost, self).save(*args,**kwargs)
